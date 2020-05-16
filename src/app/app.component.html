@@ -1,9 +1,9 @@
 <router-outlet></router-outlet>
 
-<button (click)="initializeImageArray()">Add Images</button>
-
-<div class="div1" *ngFor="let image of images; let i = index">
-  <img [src]="image.path" [alt]="image.description" />
-  <label>Box {{i+1}}</label>
-  <button class="remove-btn" (click)="remove(i)">remove this image</button>
+<div class="div1" *ngFor="let image of images; let i = index" >
+  <div (click)="addImage(i)">
+    <img [src]="image.path" />
+    <a href="javascript:void(0)">Box {{i+1}}</a>
+  </div>
+  <button class="remove-btn" (click)="remove(i)">Update Image</button>
 </div>

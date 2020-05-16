@@ -7,29 +7,33 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-app';
-  public images =[];
-  path1:any; 
-  path2:any;
-  path3:any;
-  path4:any;
-  path5:any;
-  path6:any;
+  public images = [{path: ''}, {path: ''}, {path: ''}, {path: ''}, {path: ''}, {path: ''}
+  ];
   constructor(
   ){}
   
   ngOnInit(): void {
-    this.initializeImageArray();
-  }
-
-  initializeImageArray(){
-    this.images = [{path: '/assets/images/car.jpg', description: 'image 1'}, {path: '/assets/images/cars_1.jpg', description: 'image 2'},
-    {path: '/assets/images/cars_2.jpg', description: 'image 3'}, {path: '/assets/images/cars_3.jpg', description: 'image 4'},
-    {path: '/assets/images/cars_4.jpg', description: 'image 5'}, {path: '/assets/images/cars_5.jpeg', description: 'image 6'}
-    ];
   }
 
   public remove(index: number) {
-    this.images.splice(index, 1);
+    this.images[index].path=this.images[index+1].path;
+    this.images[index+1].path='';
+  }
+
+  public addImage(index: number) {
+    if(index==0){
+      this.images[index].path='/assets/images/car.jpg'
+    } else if(index==1){
+      this.images[index].path='/assets/images/cars_1.jpg'
+    } else if(index==2){
+      this.images[index].path='/assets/images/cars_2.jpg'
+    } else if(index==3){
+      this.images[index].path='/assets/images/cars_3.jpg'
+    } else if(index==4){
+      this.images[index].path='/assets/images/cars_4.jpg'
+    } else if(index==5){
+      this.images[index].path='/assets/images/cars_5.jpeg'
+    }
   }
 
 }
