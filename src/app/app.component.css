@@ -1,0 +1,16 @@
+.div1 {
+    width: 270px;
+    height: 170px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    margin: 100px;
+    padding-left: 50%;
+    padding: 0px 0px 0px 16px !important;
+    vertical-align: middle;
+    line-height: 48px;
+    float:left;
+}
+
+.remove-btn {
+    display: inline-block;
+}
